@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Fanletters from "./Fanletters";
 
-const StDiv = styled.div`
-  width: 1187px;
-  height: 170px;
-  border-radius: 10px;
-  background: var(--bg--main-color);
-`;
+// const StDiv = styled.div`
+//   width: 1187px;
+//   height: 170px;
+//   border-radius: 10px;
+//   background: var(--bg--main-color);
+// `;
 
 const StMemberBtn = styled.button`
   width: 177px;
@@ -30,7 +31,7 @@ const StMemberBtn = styled.button`
 `;
 
 function MemberList() {
-  const [selectedMember, setSelectedMember] = useState(0);
+  const [selectedMember, setSelectedMember] = useState();
   const members = [
     { id: 0, name: "TAEIL" },
     { id: 1, name: "JOHNNY" },
@@ -44,19 +45,24 @@ function MemberList() {
   ];
 
   return (
-    <div>
-      {members.map((mem) => {
-        return (
-          <StMemberBtn
-            key={mem.id}
-            isSelected={selectedMember === mem.id}
-            onClick={() => setSelectedMember(mem.id)}
-          >
-            {mem.name}
-          </StMemberBtn>
-        );
-      })}
-    </div>
+    <>
+      <div>
+        {members.map((mem) => {
+          return (
+            <StMemberBtn
+              key={mem.id}
+              isSelected={selectedMember === mem.id}
+              onClick={() => setSelectedMember(mem.id)}
+            >
+              {mem.name}
+            </StMemberBtn>
+          );
+        })}
+      </div>
+      <div>
+        <Fanletters></Fanletters>
+      </div>
+    </>
   );
 }
 

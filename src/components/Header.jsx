@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import nct127 from "../assets/nct127.svg";
 
 const StHeader = styled.header`
   height: 170px;
@@ -12,14 +13,13 @@ const StP = styled.p`
 
 const StSvg = styled.img`
   height: 170px;
-  border: 1px solid red;
 `;
 
 function Header() {
   return (
     <StHeader>
       <StP>
-        <StSvg src="/src/assets/nct127.svg"></StSvg>
+        <StSvg src={nct127}></StSvg>
       </StP>
     </StHeader>
   );
