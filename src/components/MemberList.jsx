@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Fanletters from "./Fanletters";
+import WriteLetter from "./WriteLetter";
 
 // const StDiv = styled.div`
 //   width: 1187px;
@@ -31,7 +32,7 @@ const StMemberBtn = styled.button`
 `;
 
 function MemberList() {
-  const [selectedMember, setSelectedMember] = useState();
+  const [selectedMember, setSelectedMember] = useState("TAEIL");
   const members = [
     { id: 0, name: "TAEIL" },
     { id: 1, name: "JOHNNY" },
@@ -44,6 +45,10 @@ function MemberList() {
     { id: 8, name: "HAECHAN" },
   ];
 
+  const selectMemberBtn = (name) => {
+    setSelectedMember(name);
+  };
+
   return (
     <>
       <div>
@@ -51,8 +56,8 @@ function MemberList() {
           return (
             <StMemberBtn
               key={mem.id}
-              isSelected={selectedMember === mem.id}
-              onClick={() => setSelectedMember(mem.id)}
+              isSelected={selectedMember === mem.name}
+              onClick={() => selectMemberBtn(mem.name)}
             >
               {mem.name}
             </StMemberBtn>
@@ -60,7 +65,10 @@ function MemberList() {
         })}
       </div>
       <div>
-        <Fanletters></Fanletters>
+        <WriteLetter></WriteLetter>
+      </div>
+      <div>
+        <Fanletters selectedMember={selectedMember}></Fanletters>
       </div>
     </>
   );

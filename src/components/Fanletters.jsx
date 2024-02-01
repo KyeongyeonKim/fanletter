@@ -1,24 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import fakeData from "../assets/fakeData.json";
 
-function Fanletters() {
-  const [fanlettersData, setFanlettersData] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/fakeData.json")
-      .then((response) => response.json())
-      .then((json) => {
-        setFanlettersData([...json]);
-        return console.log(json);
-      });
-  }, []);
+function Fanletters({ selectedMember }) {
+  const [fanlettersData, setFanlettersData] = useState(fakeData);
+  const filteredFanletters = fanlettersData.filter(
+    (fanletter) => fanletter.writedTo === selectedMember
+  );
 
   return (
     <div>
       <p>
-        {fanlettersData.map((letters) => {
+        {filteredFanletters.map((letters) => {
           return (
-            <div style={{ border: "1px solid red" }}>
-              <ul key={letters.id}>
+            <div key={letters.id} style={{ border: "1px solid red" }}>
+              <ul>
                 <li>{letters.writedTo}</li>
                 <li>{letters.nickname}</li>
                 <li>{letters.createdAt}</li>
