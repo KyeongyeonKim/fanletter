@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import uuid from "react-uuid";
 
-function WriteLetter() {
+function WriteLetter({ members }) {
   const [nickname, setNickname] = useState("");
   const [content, setContent] = useState("");
   const [letters, setLetters] = useState([]);
@@ -14,7 +14,7 @@ function WriteLetter() {
       const newLetter = {
         id: uuid(),
         avatar: "../assets/avatar.png",
-        // writeTo: optionvalue값,
+        writedTo: members.name,
         nickname,
         content,
         createdAt: new Date().toLocaleString(),
@@ -22,23 +22,29 @@ function WriteLetter() {
       setLetters([...letters, newLetter]);
       setNickname("");
       setContent("");
+      console.log(letters);
     }
   };
 
   return (
     <>
-      <form>
+      <form onSubmit={(event) => event.preventDefault()}>
         <select>
           <option value="">멤버 선택</option>
-          <option value="0">TAEIL</option>
-          <option value="1">JOHNNY</option>
-          <option value="2">TAEYONG</option>
-          <option value="3">YUTA</option>
-          <option value="4">DOYOUNG</option>
-          <option value="5">JAEHYUN</option>
-          <option value="6">JUNGWOO</option>
-          <option value="7">MARK</option>
-          <option value="8">HAECHAN</option>
+          {members.map((member) => (
+            <option key={member.id} value={member.name}>
+              {member.name}
+            </option>
+          ))}
+          {/* <option value="TAEIL">TAEIL</option>
+          <option value="JOHNNY">JOHNNY</option>
+          <option value="TAEYONG">TAEYONG</option>
+          <option value="YUTA">YUTA</option>
+          <option value="DOYOUNG">DOYOUNG</option>
+          <option value="JAEHYUN">JAEHYUN</option>
+          <option value="JUNGWOO">JUNGWOO</option>
+          <option value="MARK">MARK</option>
+          <option value="HAECHAN">HAECHAN</option> */}
         </select>
         닉네임 :{" "}
         <input

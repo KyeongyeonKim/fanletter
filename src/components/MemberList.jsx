@@ -45,10 +45,6 @@ function MemberList() {
     { id: 8, name: "HAECHAN" },
   ];
 
-  const selectMemberBtn = (name) => {
-    setSelectedMember(name);
-  };
-
   return (
     <>
       <div>
@@ -57,7 +53,7 @@ function MemberList() {
             <StMemberBtn
               key={mem.id}
               isSelected={selectedMember === mem.name}
-              onClick={() => selectMemberBtn(mem.name)}
+              onClick={() => setSelectedMember(mem.name)}
             >
               {mem.name}
             </StMemberBtn>
@@ -65,7 +61,7 @@ function MemberList() {
         })}
       </div>
       <div>
-        <WriteLetter></WriteLetter>
+        <WriteLetter members={members}></WriteLetter>
       </div>
       <div>
         <Fanletters selectedMember={selectedMember}></Fanletters>
