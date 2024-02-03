@@ -11,25 +11,29 @@ function Fanletters({ letters, selectedMember }) {
 
   return (
     <div>
-      {filteredFanletters.map((letters) => {
-        return (
-          <div
-            key={letters.id}
-            style={{ border: "1px solid red" }}
-            onClick={() => {
-              navigate(`/detail/${letters.id}`);
-            }}
-          >
-            <ul>
-              <StImg src={letters.avatar}></StImg>
-              <li>{letters.writedTo}</li>
-              <li>{letters.nickname}</li>
-              <li>{letters.createdAt}</li>
-              <li>{letters.content}</li>
-            </ul>
-          </div>
-        );
-      })}
+      {filteredFanletters.length === 0 ? (
+        <p>{selectedMember}에게 팬레터를 작성해주세요!</p>
+      ) : (
+        filteredFanletters.map((letters) => {
+          return (
+            <div
+              key={letters.id}
+              style={{ border: "1px solid red" }}
+              onClick={() => {
+                navigate(`/detail/${letters.id}`);
+              }}
+            >
+              <ul>
+                <StImg src={letters.avatar}></StImg>
+                <li>{letters.writedTo}</li>
+                <li>{letters.nickname}</li>
+                <li>{letters.createdAt}</li>
+                <li>{letters.content}</li>
+              </ul>
+            </div>
+          );
+        })
+      )}
     </div>
   );
 }
