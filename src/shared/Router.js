@@ -7,7 +7,7 @@ import fakeData from "../assets/fakeData.json";
 const Router = () => {
   const [letters, setLetters] = useState(fakeData);
 
-  // letter 삭제하기 버튼
+  // letter 삭제하기
   const removeBtn = (id) => {
     const newArr = letters.filter((letter) => letter.id !== id);
     setLetters(newArr);

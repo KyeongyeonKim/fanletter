@@ -81,7 +81,7 @@ const StMemberBtn = styled.button`
   color: ${(props) =>
     props.selected ? "var(--bg--main-color)" : "var(--text-color)"};
   text-align: center;
-  font-family: Inter;
+  font-family: "KOTRAHOPE";
   font-size: 25px;
   font-style: normal;
   font-weight: 400;

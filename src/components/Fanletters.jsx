@@ -12,7 +12,12 @@ function Fanletters({ letters, selectedMember }) {
   return (
     <div>
       {filteredFanletters.length === 0 ? (
-        <p>{selectedMember}에게 팬레터를 작성해주세요!</p>
+        <>
+          <p>
+            [ {selectedMember} ] 에게 남겨진 팬레터가 없습니다. &#128557; 첫
+            번째 팬레터의 주인공이 되어주세요!! &#128140;
+          </p>
+        </>
       ) : (
         filteredFanletters.map((letters) => {
           return (

@@ -1,4 +1,5 @@
 import React from "react";
+import GlobalStyle from "GlobalStyle";
 import { useNavigate, useParams } from "react-router-dom";
 
 function Detail({ letters, removeBtn }) {
@@ -9,14 +10,23 @@ function Detail({ letters, removeBtn }) {
     return letter.id === params.id;
   });
 
-  const deleteBtnHandler = () => {
-    removeBtn(params.id);
-    alert("해당 팬레터가 삭제되었습니다");
-    navigate("/");
+  const button_event = () => {
+    if (
+      window.confirm(
+        `${foundData.writedTo}에게 작성한 팬레터를 삭제하시겠습니까?`
+      ) === true
+    ) {
+      removeBtn(params.id);
+      alert("해당 팬레터가 삭제되었습니다");
+      navigate("/");
+    } else {
+      return;
+    }
   };
 
   return (
     <>
+      <GlobalStyle />
       <div>Detail</div>
 
       <div>
@@ -33,7 +43,7 @@ function Detail({ letters, removeBtn }) {
         HOME
       </button>
       <button>수정</button>
-      <button onClick={deleteBtnHandler}>삭제</button>
+      <button onClick={button_event}>삭제</button>
     </>
   );
 }

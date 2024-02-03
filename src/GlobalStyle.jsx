@@ -1,6 +1,21 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
+@font-face {
+    font-family: 'KOTRAHOPE';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root{
 	--bg--main-color: #14183f;
 	--bg--section-color:#EAE3D2;
@@ -8,12 +23,13 @@ const GlobalStyle = createGlobalStyle`
 	--text-color:#FFFFFF;
 
 }
+
 *{
     box-sizing: border-box;
-  }
+}
 
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -29,7 +45,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	font-family: 'NanumSquareRound';
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -38,10 +54,12 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1.5;
+	font-family: 'NanumSquareRound';
 }
 ol, ul {
 	list-style: none;
+	font-family: 'NanumSquareRound';
 }
 blockquote, q {
 	quotes: none;
