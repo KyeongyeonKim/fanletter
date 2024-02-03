@@ -1,4 +1,5 @@
 import GlobalStyle from "GlobalStyle";
+import Footer from "components/Footer";
 import Header from "components/Header";
 import MemberList from "components/MemberList";
 import React from "react";
@@ -9,6 +10,7 @@ function Home({ letters, setLetters }) {
       <GlobalStyle />
       <Header></Header>
       <MemberList letters={letters} setLetters={setLetters}></MemberList>
+      <Footer></Footer>
     </>
   );
 }

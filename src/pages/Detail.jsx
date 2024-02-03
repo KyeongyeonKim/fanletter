@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import GlobalStyle from "GlobalStyle";
 import styled from "styled-components";
+import Header from "components/Header";
 import { useNavigate, useParams } from "react-router-dom";
 
 function Detail({ letters, setLetters, removeBtn }) {
@@ -50,6 +51,7 @@ function Detail({ letters, setLetters, removeBtn }) {
   return (
     <>
       <GlobalStyle />
+      <Header></Header>
       <div>Detail</div>
 
       <div>

@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+//@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
 
 @font-face {
     font-family: 'KOTRAHOPE';
@@ -10,11 +12,13 @@ const GlobalStyle = createGlobalStyle`
 }
 
 @font-face {
-    font-family: 'NanumSquareRound';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
+
+
 
 :root{
 	--bg--main-color: #14183f;
@@ -45,7 +49,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font-family: 'NanumSquareRound';
+	font-family: 'NanumSquareNeo-Variable';
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -55,12 +59,13 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1.5;
-	font-family: 'NanumSquareRound';
+	font-family: 'NanumSquareNeo-Variable';
 }
 ol, ul {
 	list-style: none;
-	font-family: 'NanumSquareRound';
+	font-family: 'NanumSquareNeo-Variable';
 }
+/* p{font-family: "Lemon", serif;} */
 blockquote, q {
 	quotes: none;
 }

@@ -5,7 +5,7 @@ import uuid from "react-uuid";
 function WriteLetter({ members, letters, setLetters }) {
   const [nickname, setNickname] = useState("");
   const [content, setContent] = useState("");
-  const [selectMem, setSelectMem] = useState("");
+  const [selectMem, setSelectMem] = useState("TAEIL");
 
   const addLetterBtn = (event) => {
     event.preventDefault();
@@ -56,7 +56,6 @@ function WriteLetter({ members, letters, setLetters }) {
         />
         내용 :{" "}
         <textarea
-          type="text"
           value={content}
           onChange={(event) => {
             if (event.target.value.length <= 100) {
