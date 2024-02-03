@@ -13,7 +13,7 @@ const Router = () => {
           path="/"
           element={<Home letters={letters} setLetters={setLetters} />}
         />
-        <Route path="detail" element={<Detail />} />
+        <Route path="detail/:id" element={<Detail letters={letters} />} />
       </Routes>
     </BrowserRouter>
   );
