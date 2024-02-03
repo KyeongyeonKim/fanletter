@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-//import fakeData from "../assets/fakeData.json";
 
 function Detail({ letters }) {
   const navigate = useNavigate();

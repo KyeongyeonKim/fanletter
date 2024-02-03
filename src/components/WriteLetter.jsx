@@ -31,12 +31,12 @@ function WriteLetter({ members, letters, setLetters }) {
   return (
     <>
       <form>
+        To :{" "}
         <select
           onChange={(event) => {
             setSelectMem(event.target.value);
           }}
         >
-          To. <option value="">멤버 선택</option>
           {members.map((member) => (
             <option key={member.id} value={member.name}>
               {member.name}

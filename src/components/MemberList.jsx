@@ -25,7 +25,7 @@ function MemberList({ letters, setLetters }) {
             return (
               <StMemberBtn
                 key={mem.id}
-                isSelected={selectedMember === mem.name}
+                selected={selectedMember === mem.name}
                 onClick={() => setSelectedMember(mem.name)}
               >
                 {mem.name}
@@ -61,7 +61,6 @@ const StCenter = styled.div`
 const StMember = styled.div`
   margin: 25px 0;
   width: 1187px;
-  //width: 80%;
   height: 10%;
   border-radius: 10px;
   background: var(--bg--main-color);
@@ -74,13 +73,13 @@ const StMemberBtn = styled.button`
   border-radius: 15px;
   border: 1px solid
     ${(props) =>
-      props.isSelected ? "var(--bg--main-color)" : "var(--text-color)"};
+      props.selected ? "var(--bg--main-color)" : "var(--text-color)"};
   background: ${(props) =>
-    props.isSelected ? "var(--text-color)" : "var(--bg--main-color)"};
+    props.selected ? "var(--text-color)" : "var(--bg--main-color)"};
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
   color: ${(props) =>
-    props.isSelected ? "var(--bg--main-color)" : "var(--text-color)"};
+    props.selected ? "var(--bg--main-color)" : "var(--text-color)"};
   text-align: center;
   font-family: Inter;
   font-size: 25px;
