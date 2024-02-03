@@ -1,5 +1,5 @@
 import React from "react";
-// import fakeData from "../assets/fakeData.json";
+import styled from "styled-components";
 
 function Fanletters({ letters, selectedMember }) {
   const filteredFanletters = letters.filter(
@@ -13,6 +13,7 @@ function Fanletters({ letters, selectedMember }) {
           return (
             <div key={letters.id} style={{ border: "1px solid red" }}>
               <ul>
+                <StImg src={letters.avatar}></StImg>
                 <li>{letters.writedTo}</li>
                 <li>{letters.nickname}</li>
                 <li>{letters.createdAt}</li>
@@ -27,3 +28,7 @@ function Fanletters({ letters, selectedMember }) {
 }
 
 export default Fanletters;
+
+const StImg = styled.img`
+  width: 100px;
+`;

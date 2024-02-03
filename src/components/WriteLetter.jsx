@@ -14,7 +14,8 @@ function WriteLetter({ members, letters, setLetters }) {
     } else {
       const newLetter = {
         id: uuid(),
-        avatar: "../assets/avatar.png",
+        avatar:
+          "https://www.iprcenter.gov/image-repository/blank-profile-picture.png/@@images/image.png",
         writedTo: selectMem,
         nickname,
         content,
