@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Fanletters from "./Fanletters";
 import WriteLetter from "./WriteLetter";
-import fakeData from "../assets/fakeData.json";
 
-function MemberList() {
+function MemberList({ letters, setLetters }) {
   const [selectedMember, setSelectedMember] = useState("TAEIL");
-  const [letters, setLetters] = useState(fakeData);
   const members = [
     { id: 0, name: "TAEIL" },
     { id: 1, name: "JOHNNY" },
