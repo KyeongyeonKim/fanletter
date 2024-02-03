@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import fakeData from "../assets/fakeData.json";
+import React from "react";
+// import fakeData from "../assets/fakeData.json";
 
-function Fanletters({ selectedMember }) {
-  const [fanlettersData, setFanlettersData] = useState(fakeData);
-  const filteredFanletters = fanlettersData.filter(
+function Fanletters({ letters, selectedMember }) {
+  const filteredFanletters = letters.filter(
     (fanletter) => fanletter.writedTo === selectedMember
   );
 
