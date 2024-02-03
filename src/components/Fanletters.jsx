@@ -47,4 +47,5 @@ export default Fanletters;
 
 const StImg = styled.img`
   width: 100px;
+  border-radius: 40%;
 `;

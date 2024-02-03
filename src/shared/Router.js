@@ -22,7 +22,13 @@ const Router = () => {
         />
         <Route
           path="detail/:id"
-          element={<Detail letters={letters} removeBtn={removeBtn} />}
+          element={
+            <Detail
+              letters={letters}
+              setLetters={setLetters}
+              removeBtn={removeBtn}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>

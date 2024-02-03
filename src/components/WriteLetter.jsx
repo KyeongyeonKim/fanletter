@@ -55,7 +55,7 @@ function WriteLetter({ members, letters, setLetters }) {
           placeholder="최대 20글자까지 작성할 수 있습니다."
         />
         내용 :{" "}
-        <input
+        <textarea
           type="text"
           value={content}
           onChange={(event) => {
@@ -63,7 +63,7 @@ function WriteLetter({ members, letters, setLetters }) {
               setContent(event.target.value);
             }
           }}
-          placeholder="최대 100글자가지만 작성할 수 있습니다."
+          placeholder="최대 100글자까지 작성할 수 있습니다."
         />
         <button type="submit" onClick={addLetterBtn}>
           팬레터 등록
