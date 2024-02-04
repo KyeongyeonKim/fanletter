@@ -58,6 +58,7 @@ const StCenter = styled.div`
   display: flex;
   justify-content: center;
 `;
+
 const StMember = styled.div`
   margin: 25px 0;
   width: 1187px;
@@ -77,7 +78,6 @@ const StMemberBtn = styled.button`
   background: ${(props) =>
     props.selected ? "var(--text-color)" : "var(--bg--main-color)"};
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
   color: ${(props) =>
     props.selected ? "var(--bg--main-color)" : "var(--text-color)"};
   text-align: center;

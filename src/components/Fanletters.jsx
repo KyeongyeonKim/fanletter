@@ -13,10 +13,10 @@ function Fanletters({ letters, selectedMember }) {
     <LettersArea>
       {filteredFanletters.length === 0 ? (
         <>
-          <p>
+          <StP>
             [ {selectedMember} ] 에게 남겨진 팬레터가 없습니다. &#128557; 첫
             번째 팬레터의 주인공이 되어주세요!! &#128140;
-          </p>
+          </StP>
         </>
       ) : (
         filteredFanletters.map((letters) => {
@@ -32,7 +32,7 @@ function Fanletters({ letters, selectedMember }) {
               </Box1>
 
               <Box2>
-                <p>{letters.nickname}</p>
+                <StNickname>{letters.nickname}</StNickname>
                 <p>{letters.createdAt}</p>
               </Box2>
               <StText>{letters.content}</StText>
@@ -56,6 +56,13 @@ const LettersArea = styled.div`
   font-weight: 400;
 `;
 
+const StP = styled.p`
+  text-align: center;
+  padding: 25px;
+  font-size: 20px;
+  font-weight: 900;
+`;
+
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -67,6 +74,7 @@ const Grid = styled.div`
   border-radius: 15px;
   background: var(--bg--fanletter-color);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
   &:hover {
     background: var(--bg--section-color);
     color: var(--bg--main-color);
@@ -89,6 +97,10 @@ const Box2 = styled.div`
   grid-row: 1/2;
   grid-column: 2/7;
   padding: 10px;
+`;
+
+const StNickname = styled.p`
+  font-weight: 900;
 `;
 
 const StText = styled.div`
