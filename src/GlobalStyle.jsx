@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-//@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
 
 @font-face {
     font-family: 'KOTRAHOPE';
@@ -18,8 +17,6 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
 }
 
-
-
 :root{
 	--bg--main-color: #14183f;
 	--bg--section-color:#EAE3D2;
@@ -33,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, blockquote, pre,
+h1, h2, h3, h4, h5, h6, blockquote, p, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -51,6 +48,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font-family: 'NanumSquareNeo-Variable';
 	vertical-align: baseline;
+	
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -60,12 +58,12 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1.5;
 	font-family: 'NanumSquareNeo-Variable';
+	background: rgba(249, 245, 235, 0.80);
 }
 ol, ul {
 	list-style: none;
 	font-family: 'NanumSquareNeo-Variable';
 }
-/* p{font-family: "Lemon", serif;} */
 blockquote, q {
 	quotes: none;
 }
