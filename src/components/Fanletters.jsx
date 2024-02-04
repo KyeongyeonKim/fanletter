@@ -10,7 +10,7 @@ function Fanletters({ letters, selectedMember }) {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <LettersArea>
       {filteredFanletters.length === 0 ? (
         <>
           <p>
@@ -21,31 +21,75 @@ function Fanletters({ letters, selectedMember }) {
       ) : (
         filteredFanletters.map((letters) => {
           return (
-            <div
+            <Grid
               key={letters.id}
-              style={{ border: "1px solid red" }}
               onClick={() => {
                 navigate(`/detail/${letters.id}`);
               }}
             >
-              <ul>
+              <Box1>
                 <StImg src={letters.avatar}></StImg>
-                <li>{letters.writedTo}</li>
-                <li>{letters.nickname}</li>
-                <li>{letters.createdAt}</li>
-                <li>{letters.content}</li>
-              </ul>
-            </div>
+              </Box1>
+
+              <Box2>{letters.nickname}</Box2>
+              <Box2>{letters.createdAt}</Box2>
+              <StText>{letters.content}</StText>
+            </Grid>
           );
         })
       )}
-    </div>
+    </LettersArea>
   );
 }
 
 export default Fanletters;
 
+const LettersArea = styled.div`
+  width: 550px;
+  border-radius: 10px;
+  background: var(--bg--section-color);
+  padding: 25px 45px 0 45px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  font-weight: 400;
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 70px 330px;
+  grid-template-rows: 20px 20px 40px;
+  gap: 5px;
+  width: 460px;
+  height: 110px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  background: var(--bg--fanletter-color);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  &:hover {
+    background: var(--bg--section-color);
+    color: var(--bg--main-color);
+    cursor: pointer;
+  }
+`;
+
+const Box1 = styled.div`
+  grid-row: 1/3;
+`;
+
 const StImg = styled.img`
-  width: 100px;
-  border-radius: 40%;
+  width: 70px;
+  border-radius: 50%;
+`;
+
+const Box2 = styled.div`
+  grid-column: 2/3;
+`;
+
+const StText = styled.div`
+  grid-column: 2/3;
+  width: 330px;
+  height: 45px;
+  border-radius: 15px;
+  border: 1px solid var(--bg--main-color);
+  background: var(--bg--fanletter-color);
 `;

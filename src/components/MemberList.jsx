@@ -34,20 +34,20 @@ function MemberList({ letters, setLetters }) {
           })}
         </StMember>
       </StCenter>
-      <div>
+
+      <StMain>
         <WriteLetter
           letters={letters}
           setLetters={setLetters}
           members={members}
         ></WriteLetter>
-      </div>
-      <div>
+
         <Fanletters
           letters={letters}
           setLetters={setLetters}
           selectedMember={selectedMember}
         ></Fanletters>
-      </div>
+      </StMain>
     </>
   );
 }
@@ -86,4 +86,16 @@ const StMemberBtn = styled.button`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  &:hover {
+    background: var(--text-color);
+    color: var(--bg--main-color);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+`;
+
+const StMain = styled.div`
+  display: flex;
+  justify-content: center;
 `;

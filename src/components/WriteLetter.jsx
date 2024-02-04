@@ -86,6 +86,8 @@ export default WriteLetter;
 const WriteArea = styled.div`
   width: 550px;
   height: 438px;
+  margin-right: 85px;
+  margin-bottom: 25px;
   border-radius: 10px;
   background: var(--bg--section-color);
   padding: 45px;
