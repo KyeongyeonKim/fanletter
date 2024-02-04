@@ -30,5 +30,5 @@ const StP = styled.p`
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 170px;
 `;
