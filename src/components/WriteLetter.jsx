@@ -120,6 +120,7 @@ const StTextarea = styled.textarea`
   width: 350px;
   height: 130px;
   margin-left: 35px;
+  padding: 10px;
   border: none;
   border-radius: 5px;
   background: var(--bg--fanletter-color);
