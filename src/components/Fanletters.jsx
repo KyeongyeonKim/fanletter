@@ -31,8 +31,10 @@ function Fanletters({ letters, selectedMember }) {
                 <StImg src={letters.avatar}></StImg>
               </Box1>
 
-              <Box2>{letters.nickname}</Box2>
-              <Box2>{letters.createdAt}</Box2>
+              <Box2>
+                <p>{letters.nickname}</p>
+                <p>{letters.createdAt}</p>
+              </Box2>
               <StText>{letters.content}</StText>
             </Grid>
           );
@@ -56,9 +58,9 @@ const LettersArea = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 70px 330px;
-  grid-template-rows: 20px 20px 40px;
-  gap: 5px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 45px);
+  gap: 10px;
   width: 460px;
   height: 110px;
   margin-bottom: 25px;
@@ -73,23 +75,32 @@ const Grid = styled.div`
 `;
 
 const Box1 = styled.div`
+  grid-column: 1/2;
   grid-row: 1/3;
 `;
 
 const StImg = styled.img`
   width: 70px;
   border-radius: 50%;
+  margin: 10px;
 `;
 
 const Box2 = styled.div`
-  grid-column: 2/3;
+  grid-row: 1/2;
+  grid-column: 2/7;
+  padding: 10px;
 `;
 
 const StText = styled.div`
-  grid-column: 2/3;
-  width: 330px;
+  grid-row: 2/3;
+  grid-column: 2/7;
+  width: 350px;
   height: 45px;
   border-radius: 15px;
   border: 1px solid var(--bg--main-color);
   background: var(--bg--fanletter-color);
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
