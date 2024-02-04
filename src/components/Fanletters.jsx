@@ -1,9 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { useContext } from "react";
+import { LettersContext } from "context/LettersContext";
 
-function Fanletters({ letters, selectedMember }) {
-  const filteredFanletters = letters.filter(
+function Fanletters({ selectedMember }) {
+  const letters = useContext(LettersContext);
+  const filteredFanletters = letters.letters.filter(
     (fanletter) => fanletter.writedTo === selectedMember
   );
 

@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import GlobalStyle from "GlobalStyle";
 import styled from "styled-components";
 import Header from "components/Header";
 import { useNavigate, useParams } from "react-router-dom";
+import { LettersContext } from "context/LettersContext";
 
-function Detail({ letters, setLetters, removeBtn }) {
+function Detail({ removeBtn }) {
+  const letters = useContext(LettersContext);
   const navigate = useNavigate();
   const params = useParams();
   const [isUpdated, setIsUpdated] = useState(false);
   const [updatedContent, setUpdatedContent] = useState("");
 
-  const foundData = letters.find((letter) => {
+  const foundData = letters.letters.find((letter) => {
     return letter.id === params.id;
   });
 
@@ -24,12 +26,12 @@ function Detail({ letters, setLetters, removeBtn }) {
       alert("수정사항이 없습니다.");
       setIsUpdated(false);
     } else {
-      const newArr = letters.map((letter) =>
+      const newArr = letters.letters.map((letter) =>
         letter.id === params.id
           ? { ...letter, content: updatedContent }
           : letter
       );
-      setLetters(newArr);
+      letters.setLetters(newArr);
       setIsUpdated(false);
     }
   };

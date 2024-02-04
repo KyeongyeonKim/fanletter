@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Fanletters from "./Fanletters";
 import WriteLetter from "./WriteLetter";
 
-function MemberList({ letters, setLetters }) {
+function MemberList() {
   const [selectedMember, setSelectedMember] = useState("TAEIL");
   const members = [
     { id: 0, name: "TAEIL" },
@@ -36,17 +36,9 @@ function MemberList({ letters, setLetters }) {
       </StCenter>
 
       <StMain>
-        <WriteLetter
-          letters={letters}
-          setLetters={setLetters}
-          members={members}
-        ></WriteLetter>
+        <WriteLetter members={members}></WriteLetter>
 
-        <Fanletters
-          letters={letters}
-          setLetters={setLetters}
-          selectedMember={selectedMember}
-        ></Fanletters>
+        <Fanletters selectedMember={selectedMember}></Fanletters>
       </StMain>
     </>
   );

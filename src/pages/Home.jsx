@@ -4,12 +4,12 @@ import Header from "components/Header";
 import MemberList from "components/MemberList";
 import React from "react";
 
-function Home({ letters, setLetters }) {
+function Home() {
   return (
     <>
       <GlobalStyle />
       <Header></Header>
-      <MemberList letters={letters} setLetters={setLetters}></MemberList>
+      <MemberList></MemberList>
       <Footer></Footer>
     </>
   );

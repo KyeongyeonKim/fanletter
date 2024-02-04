@@ -1,9 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import uuid from "react-uuid";
 import styled from "styled-components";
+import { LettersContext } from "context/LettersContext";
 
-function WriteLetter({ members, letters, setLetters }) {
+function WriteLetter({ members }) {
+  const letters = useContext(LettersContext);
   const [nickname, setNickname] = useState("");
   const [content, setContent] = useState("");
   const [selectMem, setSelectMem] = useState("TAEIL");
@@ -23,7 +25,7 @@ function WriteLetter({ members, letters, setLetters }) {
         createdAt: new Date().toLocaleString(),
       };
 
-      setLetters([newLetter, ...letters]);
+      letters.setLetters([newLetter, ...letters.letters]);
       setNickname("");
       setContent("");
     }
@@ -120,6 +122,7 @@ const StTextarea = styled.textarea`
   width: 350px;
   height: 130px;
   margin-left: 35px;
+  padding: 10px;
   border: none;
   border-radius: 5px;
   background: var(--bg--fanletter-color);
