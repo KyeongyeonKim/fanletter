@@ -1,18 +1,19 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import GlobalStyle from "GlobalStyle";
 import styled from "styled-components";
 import Header from "components/Header";
 import { useNavigate, useParams } from "react-router-dom";
-import { LettersContext } from "context/LettersContext";
+import { useSelector } from "react-redux";
 
 function Detail({ removeBtn }) {
-  const letters = useContext(LettersContext);
+  const letters = useSelector((state) => state.fanLetters);
+
   const navigate = useNavigate();
   const params = useParams();
   const [isUpdated, setIsUpdated] = useState(false);
   const [updatedContent, setUpdatedContent] = useState("");
 
-  const foundData = letters.letters.find((letter) => {
+  const foundData = letters.find((letter) => {
     return letter.id === params.id;
   });
 

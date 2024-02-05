@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import fanLetters from "../redux/modules/fanletters";
+//import fanLetters from "../redux/modules/fanletters";
 
 function Fanletters({ selectedMember }) {
   const letters = useSelector((state) => state.fanLetters);

@@ -28,16 +28,5 @@ const fanLetters = (state = initialState, action) => {
       return state;
   }
 };
-// const fanLetters = (state = initialState, action) => {
-//   switch (action.type) {
-//     case UPDATE_LETTER:
-//       return {
-//         ...state,
-//         letters: [...state.letters, action.payload],
-//       };
-//     default:
-//       return state;
-//   }
-// };
 
 export default fanLetters;
