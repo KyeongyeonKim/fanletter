@@ -3,11 +3,12 @@ import GlobalStyle from "GlobalStyle";
 import styled from "styled-components";
 import Header from "components/Header";
 import { useNavigate, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteLetter } from "../redux/modules/fanletters";
 
-function Detail({ removeBtn }) {
+function Detail() {
   const letters = useSelector((state) => state.fanLetters);
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const params = useParams();
   const [isUpdated, setIsUpdated] = useState(false);
@@ -43,7 +44,7 @@ function Detail({ removeBtn }) {
         `${foundData.writedTo}에게 작성한 팬레터를 삭제하시겠습니까?`
       ) === true
     ) {
-      removeBtn(params.id);
+      dispatch(deleteLetter(params.id));
       alert("해당 팬레터가 삭제되었습니다");
       navigate("/");
     } else {

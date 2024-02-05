@@ -2,11 +2,15 @@ import fakeData from "../../assets/fakeData.json";
 
 // action value
 const ADD_LETTER = "ADD_LETTER";
+const DELETE_LETTER = "DELETE_LETTER";
 //const UPDATE_LETTER = "UPDATE_LETTER";
 
 // action creator : action value를 return 하는 함수
 export const addLetter = (payload) => {
   return { type: ADD_LETTER, payload };
+};
+export const deleteLetter = (payload) => {
+  return { type: DELETE_LETTER, payload };
 };
 
 // export const update = (payload) => {
@@ -23,6 +27,11 @@ const fanLetters = (state = initialState, action) => {
     case ADD_LETTER:
       const newArr = action.payload;
       return [newArr, ...state];
+
+    case DELETE_LETTER:
+      // letter 삭제하기
+      const id = action.payload;
+      return state.filter((letter) => letter.id !== id);
 
     default:
       return state;

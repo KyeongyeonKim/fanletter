@@ -8,18 +8,13 @@ import { LettersContext } from "context/LettersContext";
 const Router = () => {
   const [letters, setLetters] = useState(fakeData);
 
-  // letter 삭제하기
-  const removeBtn = (id) => {
-    const newArr = letters.filter((letter) => letter.id !== id);
-    setLetters(newArr);
-  };
-
   return (
     <BrowserRouter>
       <LettersContext.Provider value={{ letters, setLetters }}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="detail/:id" element={<Detail removeBtn={removeBtn} />} />
+          {/* <Route path="detail/:id" element={<Detail removeBtn={removeBtn} />} /> */}
+          <Route path="detail/:id" element={<Detail />} />
         </Routes>
       </LettersContext.Provider>
     </BrowserRouter>
