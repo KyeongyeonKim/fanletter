@@ -1,11 +1,13 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import uuid from "react-uuid";
 import styled from "styled-components";
-import { LettersContext } from "context/LettersContext";
+import { addLetter } from "../redux/modules/fanletters";
+import { useDispatch } from "react-redux";
 
 function WriteLetter({ members }) {
-  const letters = useContext(LettersContext);
+  const dispatch = useDispatch();
+
   const [nickname, setNickname] = useState("");
   const [content, setContent] = useState("");
   const [selectMem, setSelectMem] = useState("TAEIL");
@@ -25,7 +27,7 @@ function WriteLetter({ members }) {
         createdAt: new Date().toLocaleString(),
       };
 
-      letters.setLetters([newLetter, ...letters.letters]);
+      dispatch(addLetter(newLetter));
       setNickname("");
       setContent("");
     }

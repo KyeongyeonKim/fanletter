@@ -1,12 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { useContext } from "react";
-import { LettersContext } from "context/LettersContext";
+import { useSelector } from "react-redux";
+import fanLetters from "../redux/modules/fanletters";
 
 function Fanletters({ selectedMember }) {
-  const letters = useContext(LettersContext);
-  const filteredFanletters = letters.letters.filter(
+  const letters = useSelector((state) => state.fanLetters);
+
+  const filteredFanletters = letters.filter(
     (fanletter) => fanletter.writedTo === selectedMember
   );
 
